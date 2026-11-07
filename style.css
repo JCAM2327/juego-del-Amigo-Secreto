@@ -540,34 +540,6 @@ button {
     text-align: center;
 }
 
-.site-foot {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    justify-content: space-between;
-    gap: 10px;
-    width: min(1080px, calc(100% - 32px));
-    margin: 0 auto;
-    padding: 0 0 28px;
-    color: var(--faint);
-    font-size: 0.8rem;
-}
-
-.site-foot p {
-    margin: 0;
-}
-
-.site-foot a {
-    color: var(--accent-strong);
-    font-weight: 700;
-    text-decoration: none;
-    text-underline-offset: 4px;
-}
-
-.site-foot a:hover {
-    text-decoration: underline;
-}
-
 @media (prefers-color-scheme: dark) {
     .button-draw img {
         filter: none;
@@ -611,13 +583,6 @@ button {
 
     .button-draw {
         width: 100%;
-    }
-
-    .site-foot {
-        width: min(100% - 24px, 680px);
-        flex-direction: column;
-        align-items: flex-start;
-        padding-bottom: 20px;
     }
 }
 
