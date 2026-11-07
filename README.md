@@ -1,57 +1,55 @@
-#Proyecto "Amigo Secreto"
+# Amigo Secreto
 
-Descripción
-¡Bienvenido a "Amigo Secreto"! Esta aplicación web te permite organizar fácilmente un intercambio de regalos entre amigos. Simplemente añade los nombres de los participantes, realiza el sorteo y ¡descubre quién será tu amigo secreto!
+Aplicación web para organizar un intercambio de regalos entre amigos. Permite agregar participantes, realizar el sorteo y compartir los resultados sin que nadie quede asignado a sí mismo.
 
-Características principales
-✅ Agregar participantes a la lista
+## Demo
 
-✅ Validación de nombres duplicados
+[https://jcam2327.github.io/juego-del-AmigoSecreto/](https://jcam2327.github.io/juego-del-AmigoSecreto/)
 
-✅ Sistema de sorteo que evita autoasignaciones
+## Características
 
-✅ Visualización clara de resultados
+- Agregar participantes a la lista.
+- Validación de nombres vacíos y duplicados.
+- Sorteo con algoritmo que evita autoasignaciones.
+- Resultados visibles en pantalla para compartirlos.
+- Diseño responsive alineado al sistema visual del portfolio.
+- Modo claro y oscuro según la preferencia del sistema.
 
-✅ Diseño responsive para diferentes dispositivos
+## Tecnologías
 
-Tecnologías utilizadas
 - HTML5
-
 - CSS3
-
 - JavaScript (ES6)
 
-Estructura del proyecto
+No utiliza frameworks, dependencias ni proceso de build.
 
-amigo-secreto/
+## Estructura
 
+```text
+juego-del-AmigoSecreto/
 ├── index.html
-
 ├── style.css
-
 ├── app.js
-
+├── assets/
+│   ├── amigo-secreto.png
+│   └── play_circle_outline.png
 └── README.md
+```
 
-Cómo usar
-1. Agregar participantes
-Escribe el nombre de un amigo en el campo de texto
+## Cómo usar
 
-Presiona "Añadir" o la tecla Enter
+1. Escribí el nombre de un participante y presioná **Añadir**.
+2. Repetí el proceso hasta agregar al menos dos personas.
+3. Presioná **Sortear amigo** para generar las parejas.
+4. Compartí cada resultado con la persona correspondiente.
 
-¡Verás cómo se agrega a la lista!
+## Estado
 
-2. Realizar el sorteo
+Proyecto de formación publicado como demo en GitHub Pages.
 
-Cuando hayas agregado al menos 2 participantes, haz clic en "Sortear amigo"
+El sorteo se ejecuta del lado del cliente y los resultados se muestran en pantalla. No hay backend, autenticación ni persistencia de datos. La privacidad de cada asignación depende de cómo se compartan los resultados.
 
-¡La aplicación asignará a cada persona su amigo secreto!
+## Enlaces
 
-3. Ver resultados
-
-Los resultados se mostrarán en la parte inferior en formato:
-
-Nombre ➔ Amigo Secreto
-
-Instalación
-No se requiere instalación. Simplemente abre el archivo este enlace (https://jcam2327.github.io/juego-del-AmigoSecreto/) en tu navegador.
+- [Demo](https://jcam2327.github.io/juego-del-AmigoSecreto/)
+- [Repositorio](https://github.com/JCAM2327/juego-del-AmigoSecreto)

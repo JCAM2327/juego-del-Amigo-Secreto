@@ -3,38 +3,113 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Organizá un amigo secreto: agregá participantes, realizá el sorteo y compartí los resultados.">
+    <meta name="theme-color" content="#f7f7f4" media="(prefers-color-scheme: light)">
+    <meta name="theme-color" content="#0b0f14" media="(prefers-color-scheme: dark)">
+    <meta property="og:title" content="Amigo Secreto">
+    <meta property="og:description" content="Organizá un amigo secreto: agregá participantes, realizá el sorteo y compartí los resultados.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://jcam2327.github.io/juego-del-AmigoSecreto/">
+    <meta property="og:image" content="https://jcam2327.github.io/juego-del-AmigoSecreto/assets/amigo-secreto.png">
+    <meta name="twitter:card" content="summary_large_image">
     <link rel="stylesheet" href="style.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;400;700;900&family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet">
     <title>Amigo Secreto</title>
 </head>
 
 <body>
-    <main class="main-content">
-        <header class="header-banner">
-            <h1 class="main-title">Amigo Secreto</h1>
-            <img src="assets/amigo-secreto.png" alt="Imagen representativa de amigo secreto">
-        </header>
-        
-        <section class="input-section">
-            <h2 class="section-title">Digite el nombre de sus amigos</h2>
-            <div class="input-wrapper">
-                <input type="text" id="amigo" class="input-name" placeholder="Escribe un nombre">
-                <button class="button-add" onclick="agregarAmigo()">Añadir</button>
-            </div>
-           
-            <ul id="listaAmigos" class="name-list" aria-labelledby="listaAmigos" role="list"></ul>
-            <ul id="resultado" class="result-list" aria-live="polite"></ul>
+    <a class="skip-link" href="#app">Saltar al contenido</a>
 
-            <div class="button-container">
-                <button class="button-draw" onclick="sortearAmigo()" aria-label="Sortear amigo secreto">
-                    <img src="assets/play_circle_outline.png" alt="Ícono para sortear">
+    <main class="app-shell">
+        <header class="hero">
+            <div class="hero-copy">
+                <p class="eyebrow">Organizador de intercambios</p>
+                <h1 id="page-title" class="main-title">Amigo Secreto</h1>
+                <p class="hero-lead">
+                    Agregá a los participantes, realizá el sorteo y compartí cada resultado.
+                    El sistema evita que alguien se asigne a sí mismo.
+                </p>
+                <ol class="steps" aria-label="Cómo funciona">
+                    <li><span aria-hidden="true">1</span> Agregá nombres</li>
+                    <li><span aria-hidden="true">2</span> Sorteá</li>
+                    <li><span aria-hidden="true">3</span> Compartí</li>
+                </ol>
+            </div>
+
+            <div class="hero-art">
+                <img src="assets/amigo-secreto.png" alt="" aria-hidden="true">
+                <span class="hero-badge">Sorteo sin autoasignaciones</span>
+            </div>
+        </header>
+
+        <section id="app" class="app-card" aria-labelledby="participants-title">
+            <div class="app-header">
+                <div>
+                    <p class="eyebrow eyebrow-small">Paso 1</p>
+                    <h2 id="participants-title" class="section-title">Participantes</h2>
+                    <p class="section-lead">Escribí un nombre y presioná Añadir para sumarlo a la lista.</p>
+                </div>
+            </div>
+
+            <div class="input-block">
+                <label class="field-label" for="amigo">Nombre del participante</label>
+                <div class="input-wrapper">
+                    <input
+                        type="text"
+                        id="amigo"
+                        class="input-name"
+                        placeholder="Ej. Ana, Bruno, Carla..."
+                        autocomplete="off"
+                        spellcheck="false"
+                        aria-describedby="name-help"
+                    >
+                    <button class="button-add" type="button" onclick="agregarAmigo()">Añadir</button>
+                </div>
+                <p id="name-help" class="field-help">Los nombres duplicados no se agregan.</p>
+            </div>
+
+            <ul
+                id="listaAmigos"
+                class="name-list"
+                aria-labelledby="participants-title"
+                aria-live="polite"
+                role="list"
+            ></ul>
+
+            <div class="draw-panel">
+                <div class="draw-copy">
+                    <p class="eyebrow eyebrow-small">Paso 2</p>
+                    <h2 class="section-title section-title-sm">Sortear</h2>
+                    <p class="section-lead">Cuando estén todos, realizá el sorteo para obtener las parejas.</p>
+                </div>
+                <button class="button-draw" type="button" onclick="sortearAmigo()" aria-label="Sortear amigo secreto">
+                    <img src="assets/play_circle_outline.png" alt="" aria-hidden="true">
                     Sortear amigo
                 </button>
             </div>
+
+            <div class="results-panel">
+                <div class="results-head">
+                    <div>
+                        <p class="eyebrow eyebrow-small">Paso 3</p>
+                        <h2 id="results-title" class="section-title section-title-sm">Resultados</h2>
+                    </div>
+                    <p class="results-note">Compartí cada resultado con su destinatario.</p>
+                </div>
+                <ul
+                    id="resultado"
+                    class="result-list"
+                    aria-labelledby="results-title"
+                    aria-live="polite"
+                    role="list"
+                ></ul>
+            </div>
         </section>
     </main>
+
+    <footer class="site-foot">
+        <p>HTML, CSS y JavaScript. Sin dependencias.</p>
+        <a href="https://github.com/JCAM2327/juego-del-AmigoSecreto" target="_blank" rel="noopener noreferrer">Ver repositorio</a>
+    </footer>
 
     <script src="app.js" defer></script>
 </body>
